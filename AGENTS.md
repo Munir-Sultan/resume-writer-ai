@@ -14,7 +14,8 @@ This repository contains a reusable resume-writing workflow and a fictional samp
 ## Editing and review
 
 - Use `templates/resume_template.tex` to start a private candidate copy. Replace all sample content and verify hyperlink targets before use.
-- Keep private candidate files in an untracked, ignored location or a separate private repository. Never place private material on the `public` branch.
+- Keep `main` generic and shareable. The prior candidate-specific repository is preserved on the local `private-local` branch; do not push that branch or merge it into `main`.
+- Keep any new private candidate files in private storage. Never place candidate material on `main`.
 - Keep public examples fictional and clearly labeled. Do not use real candidate contact details or generated resume PDFs in public examples.
 - Preserve a readable, single-column layout and searchable text. Compile twice with pdfLaTeX, then inspect the extracted text and rendered page.
 - Review every claim, contact link, PDF metadata field, and repository file before sharing a resume.

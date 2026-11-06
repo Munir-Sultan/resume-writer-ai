@@ -11,6 +11,8 @@ A privacy-conscious workflow for drafting, tailoring, and reviewing resumes with
 
 Candidate-specific source files, job descriptions, contact details, and generated PDFs belong in private storage. They are excluded from this public branch.
 
+The generic, shareable history is on `main`. The existing candidate-specific repository is preserved on the local `private-local` branch. Keep that branch local: do not push it or merge it into `main`. Publish `main` only.
+
 ## Build the sample
 
 Requirements: GNU Make, pdfLaTeX, and the LaTeX packages used by the source.
