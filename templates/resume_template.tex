@@ -1,0 +1,96 @@
+% Reusable, one-page resume template derived from the general resume layout.
+% Replace bracketed placeholders, add/remove role and skill rows as appropriate,
+% then compile from this directory with pdfLaTeX (twice for stable links).
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage[left=0.55in,right=0.55in,top=0.50in,bottom=0.32in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{charter}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{microtype}
+\usepackage{needspace}
+
+\input{glyphtounicode}
+\pdfgentounicode=1
+\hypersetup{
+  pdftitle={Resume - [Full Name]},
+  pdfauthor={[Full Name]},
+  pdfsubject={Professional resume},
+  pdflang={en-US}
+}
+
+\definecolor{resumeNavy}{HTML}{26354A}
+\definecolor{ruleGray}{HTML}{BFC7D5}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{2em}
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+
+\titleformat{\section}
+  {\fontsize{10.7pt}{12.5pt}\selectfont\bfseries\color{resumeNavy}}
+  {}{0pt}{}[\vspace{1pt}{\color{ruleGray}\titlerule}]
+\titlespacing*{\section}{0pt}{9pt}{4.5pt}
+
+\newcommand{\role}[4]{%
+  \Needspace{5\baselineskip}
+  {\fontsize{10.25pt}{12.3pt}\selectfont\bfseries #1}\par
+  #2 \enspace\textbar\enspace #4 \enspace\textbar\enspace #3\par
+  \vspace{2pt}
+}
+\newenvironment{resumeitems}{%
+  \begin{itemize}[leftmargin=1.1em, topsep=0pt, itemsep=2.15pt, parsep=0pt,
+    partopsep=0pt, label=\textbullet]
+}{\end{itemize}\vspace{5.2pt}}
+\newcommand{\skillrow}[2]{\textbf{#1:} #2\par\vspace{2.3pt}}
+
+\begin{document}
+\fontsize{10pt}{12pt}\selectfont
+\raggedright
+
+{\centering
+  {\fontsize{24pt}{27pt}\selectfont\bfseries\color{resumeNavy} [FULL NAME]}\par
+  \vspace{3pt}
+  {\bfseries [Target Job Title] \textbar\ [Specialization or Value Proposition]}\par
+  \vspace{5pt}
+  [City, State] \enspace\textbar\enspace [Phone]
+  \enspace\textbar\enspace \href{mailto:email@example.com}{email@example.com}\par
+  \href{https://www.linkedin.com/in/your-handle}{linkedin.com/in/your-handle}\par
+}
+
+\section{Summary}
+[Write two or three concise sentences about relevant expertise, role alignment, and the value you bring.]
+
+\section{Experience}
+\role{[Job Title --- Focus Area]}{[Company]}{[Month Year -- Month Year]}{[City, State]}
+\begin{resumeitems}
+  \item [Lead with a specific action, describe the software or system, and state a supported outcome.]
+  \item [Add relevant tools, technical scope, collaboration, or measurable impact when verified.]
+\end{resumeitems}
+
+\role{[Previous Job Title --- Focus Area]}{[Company]}{[Month Year -- Month Year]}{[City, State]}
+\begin{resumeitems}
+  \item [Prioritize the contribution most relevant to the target role.]
+  \item [Keep claims specific, concise, and supportable.]
+\end{resumeitems}
+
+\section{Technical Skills}
+\skillrow{Languages}{[Relevant programming and scripting languages]}
+\skillrow{Platforms \& Interfaces}{[Operating systems, hardware, protocols, and platforms]}
+\skillrow{Tools}{[Development, testing, CI/CD, and collaboration tools]}
+\skillrow{Engineering}{[Relevant methods and engineering practices]}
+
+\section{Additional Experience}
+\textbf{[Project, leadership, or volunteer role]} \textbar\ [Dates]\par
+[One concise description of relevant work or contribution.]
+
+\section{Education}
+\textbf{[Institution]} \textbar\ [City, State] \textbar\ [Graduation Year]\par
+[Degree, field of study, and optional relevant honors or coursework]
+
+\end{document}

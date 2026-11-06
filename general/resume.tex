@@ -1,0 +1,94 @@
+% Fictional sample resume. All names, organizations, dates, and details below
+% are illustrative and do not describe a real candidate.
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage[left=0.55in,right=0.55in,top=0.50in,bottom=0.40in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{charter}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{microtype}
+\usepackage{needspace}
+
+\input{glyphtounicode}
+\pdfgentounicode=1
+\hypersetup{
+  pdftitle={Fictional Sample Resume},
+  pdfauthor={Sample Candidate},
+  pdfsubject={Illustrative resume layout},
+  pdflang={en-US}
+}
+
+\definecolor{resumeNavy}{HTML}{26354A}
+\definecolor{ruleGray}{HTML}{BFC7D5}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{2em}
+
+\titleformat{\section}
+  {\fontsize{10.7pt}{12.5pt}\selectfont\bfseries\color{resumeNavy}}
+  {}{0pt}{}[\vspace{1pt}{\color{ruleGray}\titlerule}]
+\titlespacing*{\section}{0pt}{9pt}{4.5pt}
+
+\newcommand{\role}[4]{%
+  \Needspace{5\baselineskip}
+  {\fontsize{10.25pt}{12.3pt}\selectfont\bfseries #1}\par
+  #2 \enspace\textbar\enspace #4 \enspace\textbar\enspace #3\par
+  \vspace{2pt}
+}
+\newenvironment{resumeitems}{%
+  \begin{itemize}[leftmargin=1.1em, topsep=0pt, itemsep=2.15pt, parsep=0pt,
+    partopsep=0pt, label=\textbullet]
+}{\end{itemize}\vspace{4pt}}
+\newcommand{\skillrow}[2]{\textbf{#1:} #2\par\vspace{2.3pt}}
+
+\begin{document}
+\fontsize{10pt}{12pt}\selectfont
+\raggedright
+
+{\centering
+  {\fontsize{24pt}{27pt}\selectfont\bfseries\color{resumeNavy} SAMPLE CANDIDATE}\par
+  \vspace{3pt}
+  {\bfseries Software Engineer \textbar\ Example Applications}\par
+  \vspace{5pt}
+  Sample City, ST \enspace\textbar\enspace (555) 010-0000
+  \enspace\textbar\enspace \href{mailto:sample@example.com}{sample@example.com}\par
+  \href{https://example.com/profile}{example.com/profile}\par
+  {\small Fictional sample content for layout demonstration}\par
+}
+
+\section{Summary}
+Software engineer focused on practical application development and reliable tools. Experienced in building small services, improving automated checks, and working with teammates to turn clear requirements into maintainable software.
+
+\section{Experience}
+\role{Software Engineer}{Example Software Studio}{2023 -- Present}{Sample City, ST}
+\begin{resumeitems}
+  \item Built a Python service that organizes sample project data and presents clear status reports to internal users.
+  \item Added automated tests and documentation to make routine changes easier to review and maintain.
+  \item Worked with design and engineering teammates to clarify requirements and deliver incremental improvements.
+\end{resumeitems}
+
+\role{Associate Developer}{Illustrative Technology Group}{2021 -- 2023}{Sample City, ST}
+\begin{resumeitems}
+  \item Implemented interface improvements in a small web application using JavaScript and accessible HTML.
+  \item Investigated reported issues, documented reproducible steps, and contributed fixes through code review.
+\end{resumeitems}
+
+\section{Technical Skills}
+\skillrow{Languages}{Python, JavaScript, SQL}
+\skillrow{Tools}{Git, Linux, pytest, Docker}
+\skillrow{Practices}{API development, automated testing, code review, technical documentation}
+
+\section{Projects}
+\textbf{Example Task Tracker} \textbar\ Personal learning project\par
+Created a small application to track sample tasks, with a documented API and automated tests.
+
+\section{Education}
+\textbf{Example State University} \textbar\ Sample City, ST \textbar\ 2021\par
+Bachelor of Science in Computer Science
+
+\end{document}

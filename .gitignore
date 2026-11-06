@@ -1,0 +1,15 @@
+# LaTeX build files and generated documents
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.pdf
+
+# Local job material and private candidate data
+tailored_resumes/
+private/
+.env
+.env.*
+!.env.example
